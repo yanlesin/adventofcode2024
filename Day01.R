@@ -56,7 +56,7 @@ from
 
 DAY_1_RESULT_1 <- dbGetQuery(conn = con, statement = query_1)
 
-cat(DAY_1_RESULT_2$SIMILARITY)
+cat(DAY_1_RESULT_1$DISTANCE)
 
 query_2 <- "
 WITH
@@ -86,7 +86,7 @@ FROM
 
 DAY_1_RESULT_2 <- dbGetQuery(conn = con, statement = query_2)
 
-cat(DAY_1_RESULT_1$DISTANCE)
+cat(DAY_1_RESULT_2$SIMILARITY)
 
 dbDisconnect(conn = con)
 
