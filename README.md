@@ -4,4 +4,4 @@ I will attempt to solve problems using [DuckDB](https://duckdb.org/) and R
 
 ## Day 1
 
-Link to solution: Part 1 and Part 2
+Link to solution: [Part 1 and Part 2](https://github.com/yanlesin/adventofcode2024/blob/main/Day01.R)
