@@ -64,10 +64,20 @@ WITH
       ) as TEXT_SPLIT
     FROM
       AOC_2024_DAY_3
+  ),
+  PARSED_KEYWORDS AS (
+    SELECT 
+      *,
+      REGEXP_EXTRACT_ALL (TEXT_SPLIT, 'do\\(\\)') as DO,
+      REGEXP_EXTRACT_ALL (TEXT_SPLIT, 'don.*?t\\(\\)') as DONT,
+      REGEXP_EXTRACT_ALL (TEXT_SPLIT, 'mul\\(\\d{1,3},\\d{1,3}\\)') as MUL
+    FROM UNNESTED
   )
 
-SELECT * FROM UNNESTED
+SELECT *
+FROM PARSED_KEYWORDS
 
 "
 
 DAY_3_RESULT_2 <- dbGetQuery(conn = con, statement = query_2)
+
